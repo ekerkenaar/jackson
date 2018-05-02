@@ -1,7 +1,14 @@
+# 
+# First set a config and key file containing credentials.
+# Run: wlst src/main/wlst/setupCredentials.py http://wls:7001
+# 
+#Then you can run a deploy with:
+# 
+import sys
 
-username='weblogic'
-password='Welkom01'
-adminUrl='http://localhost:7001'
+configFile='./src/main/wlst/.config'
+keyFile='./src/main/wlst/.key'
+adminUrl=sys.argv[1]
 
 deploymentName='jackson-project'
 deploymentTarget='cluster_wls'
@@ -21,8 +28,7 @@ def deployAndStart():
     except:
         print 'Failed to deploy application'
 
-
-connect(username, password, adminUrl)
+connect(userConfigFile=configFile, userKeyFile=keyFile, url=adminUrl)
 stopAndUndeploy()
 deployAndStart()
 disconnect()

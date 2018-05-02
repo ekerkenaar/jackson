@@ -12,9 +12,9 @@ import test.rest.domain.Persoon;
 @Path("persoon-service")
 public class PersoonService {
 
-	@GET
-	@Produces(MediaType.APPLICATION_JSON)
-	public Persoon getPersoon() {
-		return new Persoon("Jan", "Janssen", new DateTime());
-	}
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Persoon getPersoon() {
+        return new Persoon("Jan", "Janssen", new DateTime());
+    }
 }

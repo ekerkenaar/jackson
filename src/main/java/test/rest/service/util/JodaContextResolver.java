@@ -10,11 +10,11 @@ import com.fasterxml.jackson.datatype.joda.JodaModule;
 @Provider
 public class JodaContextResolver implements ContextResolver<ObjectMapper> {
 
-	@Override
-	public ObjectMapper getContext(Class<?> type) {
-		final ObjectMapper result = new ObjectMapper();
-		result.registerModule(new JodaModule());
-		result.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
-		return result;
-	}
+    @Override
+    public ObjectMapper getContext(Class<?> type) {
+        final ObjectMapper result = new ObjectMapper();
+        result.registerModule(new JodaModule());
+        result.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
+        return result;
+    }
 }
